@@ -10,5 +10,4 @@ wheels/
 .venv
 
 #extras
-.python-version
 requirements*
