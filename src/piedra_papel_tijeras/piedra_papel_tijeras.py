@@ -2,6 +2,8 @@
 
 from definitions import *
 
+import os
+
 def ordenador_decide_jugada() -> Choices:
     ''' 
     Elige aleatoriamente entre piedra, papel o tijeras y devuelve la elección.     
@@ -47,3 +49,11 @@ def jugar_torneo():
         print('Usuario: {} vs. Ordernador: {}... \033[1m\033[1;35m{}\033[0m'.format(user.value, computer.value, state.value.upper()))
         print('Usuario - \033[1m{}\033[0m & Ordenador - \033[1m{}\033[0m'.format(user_points, computer_points))
     print("Tenemos ganador... Felcidades \033[1m\033[1;35m{}\033[0m".format("JUGADOR" if user_points == 3 else "ORDENADOR"))
+    if user_points == 3:
+        while True:
+            try: os.system("say -r 200 'Has ganado!!!'")
+            except KeyboardInterrupt: exit() 
+    else:
+        while True:
+            try: os.system("say -r 200 'Has perdido!!!'")
+            except KeyboardInterrupt: exit() 
